@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+	font-family: "Poppins";
+}
+
+h1 {
+	@apply text-xl md:text-4xl lg:text-8xl;
+}
+
+h2 {
+	@apply text-xl md:text-3xl;
+}
+
+p {
+	@apply text-sm lg:text-lg opacity-70;
+}
