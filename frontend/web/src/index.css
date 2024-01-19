@@ -7,6 +7,7 @@
 * {
 	padding: 0px;
 	margin: 0px;
+	/* border: 1px solid black; */
 }
 
 html,
@@ -14,14 +15,23 @@ body {
 	height: 100%;
 	width: 100%;
 	font-family: "Poppins";
+	overflow-x: hidden;
 }
 
 h1 {
-	@apply text-xl md:text-4xl lg:text-8xl;
+	@apply text-xl md:text-4xl lg:text-5xl xl:text-6xl;
 }
 
 h2 {
 	@apply text-xl md:text-3xl;
+}
+
+h3 {
+	@apply text-xl font-bold md:text-2xl;
+}
+
+h4 {
+	@apply text-lg md:text-lg;
 }
 
 p {
