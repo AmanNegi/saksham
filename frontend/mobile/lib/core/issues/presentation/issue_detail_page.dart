@@ -62,7 +62,7 @@ class _IssueDetailPageState extends State<IssueDetailPage> {
                     _getHeading("Posted By"),
                     _getDescription(widget.issue.issuedBy),
                     _getHeading("Department"),
-                    _getDescription(widget.issue.department),
+                    _getDescription(widget.issue.departmentName),
                     Text("Posted: ${timeago.format(widget.issue.createdAt)}"),
                     SizedBox(height: 0.025 * getHeight(context)),
                     SizedBox(height: 0.05 * getHeight(context)),
@@ -94,7 +94,7 @@ class _IssueDetailPageState extends State<IssueDetailPage> {
                   if (isAdmin())
                     Expanded(
                       child: ActionButton(
-                        text: "Mark as Resolved",
+                        text: "Resolve",
                         onPressed: () async {
                           var res = await IssuesManager()
                               .updateIssueStatus(widget.issue.id, "closed");
@@ -108,7 +108,7 @@ class _IssueDetailPageState extends State<IssueDetailPage> {
                   Expanded(
                     child: ActionButton(
                       color: Colors.grey,
-                      text: "Mark as Stale",
+                      text: "Inactive",
                       onPressed: () async {
                         var res = await IssuesManager()
                             .updateIssueStatus(widget.issue.id, "stale");
