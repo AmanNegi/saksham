@@ -62,7 +62,7 @@ const Nav = () => {
 								Solution
 							</a>
 						</li>
-						
+
 						<li>
 							<a
 								href="#"
