@@ -7,11 +7,11 @@ import { FaBell } from "react-icons/fa6";
 function Solution() {
 	return (
 		<article>
-			<section className="h-auto space-y-3 p-4 sm:p-10 xl:h-[50vh] xl:flex xl:flex-col xl:justify-center xl:items-center ">
-				<h1 className="text-center">Safe & Conveinint transaction</h1>
+			<section className="h-auto space-y-6 p-4 sm:p-10 xl:h-[50vh] xl:flex xl:flex-col xl:justify-center xl:items-center ">
+				<h1 className="text-center">Building Bridges, Fostering Change</h1>
 				<h4 className="text-center">
-					Want to pay anything with the touch of a finger. Through UNINE, you
-					can make practically any transaction.
+					Connecting citizens with local authorities to drive positive change in
+					the community
 				</h4>
 			</section>
 			<section className=" h-auto grid gap-4 p-4 justify-items-center sm:h-auto sm:grid-cols-2 sm:gap-5 sm:content-end xl:grid-cols-4 xl:h-[50vh] xl:pb-28">
