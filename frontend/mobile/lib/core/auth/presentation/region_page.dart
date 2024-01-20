@@ -5,6 +5,7 @@ import 'package:get_it/get_it.dart';
 
 import 'package:swaraksha/colors.dart';
 import 'package:swaraksha/core/auth/application/auth.dart';
+import 'package:swaraksha/core/home/presentation/user/dashboard_page.dart';
 import 'package:swaraksha/data/app_state.dart';
 import 'package:swaraksha/globals.dart';
 import 'package:swaraksha/models/region.dart';
@@ -177,5 +178,6 @@ class _RegionPageState extends State<RegionPage> {
     if (widget.isFromSettings) {
       return Navigator.pop(context);
     }
+    navigateToAndRemoveUntil(const DashboardPage(), context);
   }
 }

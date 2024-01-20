@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "256337442137",
+    "project_id": "swayamraksha-57c9e",
+    "storage_bucket": "swayamraksha-57c9e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:256337442137:android:cf30fffbf4ed0f8f884848",
+        "android_client_info": {
+          "package_name": "com.aster.swayamraksha"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJYQQuABKIxpdqDJAppc6U2Z_tLmJGn-M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
