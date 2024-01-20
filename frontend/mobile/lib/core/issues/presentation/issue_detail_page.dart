@@ -50,6 +50,13 @@ class _IssueDetailPageState extends State<IssueDetailPage> {
                             borderRadius: BorderRadius.circular(15.0),
                             child: Image.network(
                               widget.issue.images[0],
+                              loadingBuilder:
+                                  (context, child, loadingProgress) {
+                                if (loadingProgress == null) return child;
+                                return const Center(
+                                  child: CircularProgressIndicator(),
+                                );
+                              },
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -64,8 +71,7 @@ class _IssueDetailPageState extends State<IssueDetailPage> {
                     _getHeading("Department"),
                     _getDescription(widget.issue.departmentName),
                     Text("Posted: ${timeago.format(widget.issue.createdAt)}"),
-                    SizedBox(height: 0.025 * getHeight(context)),
-                    SizedBox(height: 0.05 * getHeight(context)),
+                    SizedBox(height: 0.2 * getHeight(context)),
                   ],
                 ),
               ),
@@ -96,9 +102,10 @@ class _IssueDetailPageState extends State<IssueDetailPage> {
                       child: ActionButton(
                         text: "Resolve",
                         onPressed: () async {
-                          var res = await IssuesManager()
-                              .updateIssueStatus(widget.issue.id, "closed");
-                          if (res && mounted) {
+                          final res = await IssuesManager().updateIssueStatus(
+                              widget.issue.id, "in-progress");
+
+                          if (res && mounted)   {
                             Navigator.pop(context);
                           }
                         },

@@ -10,7 +10,7 @@ export const issueSchema = new mongoose.Schema({
   description: String,
   status: {
     type: String,
-    enum: ["open", "closed", "stale"],
+    enum: ["open", "closed", "stale", "in-progress"],
     default: "open",
   },
   createdAt: {

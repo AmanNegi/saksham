@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 import 'package:swaraksha/core/chat/presentation/chat_page.dart';
 import 'package:swaraksha/core/home/presentation/user/home_page.dart';
+import 'package:swaraksha/core/notification/application/notification_manager.dart';
 import 'package:swaraksha/core/settings/presentation/settings_page.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -19,6 +21,13 @@ class _DashboardPageState extends State<DashboardPage>
   void initState() {
     _tabController = TabController(length: 3, vsync: this, initialIndex: 0);
     super.initState();
+  }
+
+
+  @override
+  void dispose(){
+    GetIt.instance.get<NotificationManager>().detachPoller = false;
+    super.dispose();
   }
 
   @override

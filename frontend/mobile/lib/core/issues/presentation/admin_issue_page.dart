@@ -20,6 +20,7 @@ class AdminIssuePage extends StatefulWidget {
 
 class _AdminIssuePageState extends State<AdminIssuePage> {
   late BitmapDescriptor markerIcon;
+  late BitmapDescriptor specialIcon;
   CameraPosition currentPosition = const CameraPosition(
     target: LatLng(37.42796133580664, -122.085749655962),
     zoom: 14.5,
@@ -95,6 +96,11 @@ class _AdminIssuePageState extends State<AdminIssuePage> {
       'assets/marker.png',
     );
 
+    specialIcon = await BitmapDescriptor.fromAssetImage(
+      const ImageConfiguration(size: Size(12, 12)),
+      'assets/admin_pin.png',
+    );
+
     final issues = await IssuesManager().getIssuesByDepartment();
 
     for (var item in issues) {
@@ -108,16 +114,18 @@ class _AdminIssuePageState extends State<AdminIssuePage> {
           IssueDetailPage(issue: item),
           context,
         ),
+        useSpecialIcon: item.department == "65ab979e3874905ec7dc25fc",
       );
     }
 
     setState(() {});
   }
 
-  void addMarker(LatLng loc, Function onClick) async {
+  void addMarker(LatLng loc, Function onClick,
+      {bool useSpecialIcon = false}) async {
     markers.add(
       Marker(
-        icon: markerIcon,
+        icon: useSpecialIcon ? specialIcon : markerIcon,
         markerId: MarkerId(DateTime.now().microsecondsSinceEpoch.toString()),
         position: loc,
         onTap: () {
@@ -155,9 +163,9 @@ class _AdminIssuePageState extends State<AdminIssuePage> {
       ),
       body: GoogleMap(
         zoomControlsEnabled: false,
-        myLocationEnabled: true,
+        // myLocationEnabled: true,
         scrollGesturesEnabled: true,
-        mapType: MapType.normal,
+        mapType: MapType.hybrid,
         initialCameraPosition: currentPosition,
         compassEnabled: true,
         myLocationButtonEnabled: true,

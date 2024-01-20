@@ -40,7 +40,7 @@ class IssuesManager {
         "userId": appState.value.uid!,
       },
     );
-
+  
     debugPrint("Response Body: ${response.body}");
     if (response.statusCode == 200) {
       showToast("Issue marked as $status");

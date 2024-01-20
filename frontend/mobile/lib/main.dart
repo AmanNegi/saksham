@@ -4,6 +4,7 @@ import 'package:get_it/get_it.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:swaraksha/core/auth/presentation/login_page.dart';
 import 'package:swaraksha/core/home/presentation/user/dashboard_page.dart';
+import 'package:swaraksha/core/notification/application/notification_manager.dart';
 import 'package:swaraksha/data/app_state.dart';
 import 'package:swaraksha/firebase_options.dart';
 
@@ -15,6 +16,8 @@ void main() async {
   final getIt = GetIt.instance;
 
   getIt.registerSingleton<AppCache>(AppCache());
+  getIt.registerSingleton<NotificationManager>(NotificationManager());
+
   await getIt<AppCache>().getDataFromDevice();
 
   runApp(const MyApp());
@@ -26,6 +29,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'SwayamRaksha',
       theme: ThemeData(
         fontFamily: GoogleFonts.nunito().fontFamily,
