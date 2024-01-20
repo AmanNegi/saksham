@@ -10,17 +10,18 @@ const Footer = () => {
 					backgroundSize: "cover",
 					backgroundPosition: "center",
 					backdropFilter: "blur(20px)",
-				}} id="footer">
+				}}
+				id="footer">
 				<div className="h-[8rem] m-2 relative">
 					<div className="absolute inset-0 opacity-50"></div>
 					<p className="font-extrabold-100 font-[#000000] text-[1rem] leading-6  text-center text-black md:text-[2rem] sm:text-[3rem] sm:leading-9">
-						Get Unine App on Google
+						Get Our App on Google
 						<br />
 						Play or App store
 					</p>
 
 					<p className="text-[0.7rem] text-center sm:text-[1rem]">
-						Build your financial with a transparent community
+						Report your issues seemlessy and get notified
 					</p>
 					<div className="flex justify-center">
 						<div>
