@@ -12,28 +12,28 @@ const Footer = () => {
 					backdropFilter: "blur(20px)",
 				}} id="footer">
 				<div className="h-[8rem] m-2 relative">
-					<div className="absolute inset-0  opacity-50"></div>
-					<p className="font-extrabold-100 font-[#000000] text-[1rem] leading-6  text-center text-black md:text-[2rem] sm:text-[3rem] leading-9">
+					<div className="absolute inset-0 opacity-50"></div>
+					<p className="font-extrabold-100 font-[#000000] text-[1rem] leading-6  text-center text-black md:text-[2rem] sm:text-[3rem] sm:leading-9">
 						Get Unine App on Google
 						<br />
 						Play or App store
 					</p>
 
-					<p className="text-[0.7rem] text-center sm: text-[1rem]">
+					<p className="text-[0.7rem] text-center sm:text-[1rem]">
 						Build your financial with a transparent community
 					</p>
 					<div className="flex justify-center">
 						<div>
 							<img
 								src="/google.png"
-								className="w-[30vw] object-contain md:w-[20vh] sm:w-[10vh]"
+								className="w-[35vw] object-contain md:w-[20vh] sm:w-[10vh]"
 								alt=""
 							/>
 						</div>
 						<div>
 							<img
 								src="/google.png"
-								className="w-[30vw] object-contain md:w-[20vh] sm:w-[10vh]"
+								className="w-[35vw] object-contain md:w-[20vh] sm:w-[10vh]"
 								alt=""
 							/>
 						</div>
@@ -41,7 +41,7 @@ const Footer = () => {
 				</div>
 			</section>
 
-			<footer className="footer p-10 bg-base-200 text-base-content">
+			<footer className="p-10 footer bg-base-200 text-base-content">
 				<nav>
 					<header className="footer-title">Services</header>
 					<a className="link link-hover">Branding</a>
