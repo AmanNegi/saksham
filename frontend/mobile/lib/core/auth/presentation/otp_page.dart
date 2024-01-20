@@ -138,10 +138,12 @@ class _OTPPageState extends State<OTPPage> {
     isLoading = false;
     setState(() {});
 
+    await Future.delayed(const Duration(seconds: 1));
+
     if (res && appState.value.userType == "user" && mounted) {
       navigateTo(const RegionPage(), context);
     } else if (res && appState.value.userType == "admin" && mounted) {
-      navigateTo(const DepartmentPage(), context);
+      navigateToAndRemoveUntil(const DepartmentPage(), context);
     }
   }
 }

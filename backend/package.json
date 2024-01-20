@@ -24,6 +24,7 @@
     "joi-objectid": "^4.0.2",
     "lodash": "^4.17.21",
     "mongoose": "^8.0.4",
+    "socket.io": "^4.7.4",
     "ts-node": "^10.9.2"
   },
   "devDependencies": {

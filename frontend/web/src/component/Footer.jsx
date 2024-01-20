@@ -4,15 +4,15 @@ const Footer = () => {
 	return (
 		<React.Fragment>
 			<section
-				className="h-[40vh] bg-[#3EBCF0] flex justify-center items-center relative"
+				className="h-[40vh] bg-[#3EBCF0] flex justify-center items-center "
 				style={{
 					backgroundImage: 'url("../../public/footerBackground.jpg")',
 					backgroundSize: "cover",
 					backgroundPosition: "center",
-					backdropFilter: "blur(40px)",
-				}}>
+					backdropFilter: "blur(20px)",
+				}} id="footer">
 				<div className="h-[8rem] m-2 relative">
-					<div className="absolute inset-0  opacity-50"></div>
+					<div className="absolute inset-0 opacity-50"></div>
 					<p className="font-extrabold-100 font-[#000000] text-[1rem] leading-6  text-center text-black md:text-[2rem] sm:text-[3rem] sm:leading-9">
 						Get Unine App on Google
 						<br />
@@ -41,7 +41,7 @@ const Footer = () => {
 				</div>
 			</section>
 
-			<footer className="footer p-10 bg-base-200 text-base-content">
+			<footer className="p-10 footer bg-base-200 text-base-content">
 				<nav>
 					<header className="footer-title">Services</header>
 					<a className="link link-hover">Branding</a>

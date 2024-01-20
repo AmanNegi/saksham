@@ -86,6 +86,7 @@ class AuthManager {
           password.trim(),
         );
 
+        print(data);
         if (data == null) {
           showToast("Error while registering");
           return false;
@@ -100,6 +101,7 @@ class AuthManager {
             name: appUser.name,
             phone: appUser.phone,
             uid: appUser.id,
+            userType: appUser.userType,
             department: "",
           ),
         );
