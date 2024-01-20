@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:swaraksha/core/issues/application/issues_manager.dart';
 import 'package:swaraksha/core/notification/application/notification_manager.dart';
 import 'package:swaraksha/widgets/loading_layout.dart';
 import "package:timeago/timeago.dart" as timeago;
@@ -76,8 +77,10 @@ class _NotificationPageState extends State<NotificationPage> {
               ),
               ElevatedButton.icon(
                 icon: const Icon(Icons.check),
-                label: const Text("Resolve"),
-                onPressed: () async {},
+                label: const Text("Verify"),
+                onPressed: () async {
+                  await IssuesManager().updateIssueStatus(e.issueId, "closed");
+                },
               ),
             ],
           ),

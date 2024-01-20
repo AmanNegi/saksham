@@ -53,6 +53,8 @@ class NotificationManager {
       return null;
     }
   }
+
+  
 }
 
 class Notifications {

@@ -1,4 +1,4 @@
-import { Notification } from "../models/notification";
+import { Notifications } from "../models/notification";
 const express = require("express");
 const router = express.Router();
 import Joi from "joi";
@@ -11,7 +11,7 @@ router.get("/getCount/:id", async (req: any, res: any) => {
     return res.status(404).send("Enter a valid user id");
   }
 
-  const notifications = await Notification.findOne({ userId: id });
+  const notifications = await Notifications.findOne({ userId: id });
 
   if (!notifications) {
     return res.send({ count: 0 });
@@ -27,7 +27,7 @@ router.get("/getCount/:id", async (req: any, res: any) => {
 router.get("/:id", async (req: any, res: any) => {
   const id = req.params.id;
 
-  const notifications = await Notification.findOne({ userId: id });
+  const notifications = await Notifications.findOne({ userId: id });
 
   if (!notifications) {
     return res.status(404).send("Notifications not found");
@@ -55,7 +55,7 @@ router.post("/add", async (req: any, res: any) => {
   }
 
   // add notification to user
-  const notification = await Notification.findOne({ userId });
+  const notification = await Notifications.findOne({ userId });
 
   if (notification) {
     notification.notifications.push({
@@ -75,7 +75,7 @@ router.post("/add", async (req: any, res: any) => {
       return res.status(500).json({ error: "Error while saving notification" });
     }
   } else {
-    const notification = new Notification({
+    const notification = new Notifications({
       userId,
       notifications: [
         {
@@ -97,6 +97,30 @@ router.post("/add", async (req: any, res: any) => {
       return res.status(500).json({ error: "Error while saving notification" });
     }
   }
+});
+
+router.post("/delete ", async (req: any, res: any) => {
+  const { userId, issueId } = req.body;
+
+  if (!userId) {
+    return res.status(404).send("Enter a valid user id");
+  }
+  if (!issueId) {
+    return res.status(404).send("Enter a valid issue id");
+  }
+
+  const notification = await Notifications.findOne({
+    userId: userId,
+  });
+
+  if (!notification) {
+    return res.status(404).send("Notifications not found");
+  }
+
+  // notification.notifications.where("issueId", issueId).remove();
+  await notification.save();
+
+  return res.send(notification);
 });
 
 module.exports = router;

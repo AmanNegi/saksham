@@ -8,7 +8,7 @@ import {
 import { User } from "../models/user";
 import Joi from "joi";
 import { Department } from "../models/department";
-import { Notification } from "../models/notification";
+import { Notifications } from "../models/notification";
 const objectId = require("joi-objectid")(Joi);
 
 router.get("/", async (req: any, res: any) => {
@@ -97,10 +97,10 @@ router.post("/resolve/:status", async (req: any, res: any) => {
 
     //add notification in user's account
     if (status === "in-progress") {
-      let notification = await Notification.findOne({ userId });
+      let notification = await Notifications.findOne({ userId });
 
       if (!notification) {
-        notification = new Notification({
+        notification = new Notifications({
           userId: issue.issuedBy,
           notifications: [
             {
