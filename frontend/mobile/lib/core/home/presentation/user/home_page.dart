@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:swaraksha/colors.dart';
+import 'package:swaraksha/core/admin/presentation/admin_control_page.dart';
 import 'package:swaraksha/core/issues/presentation/add_issue_page.dart';
 import 'package:swaraksha/core/issues/presentation/admin_issue_page.dart';
 import 'package:swaraksha/core/issues/presentation/my_issues_page.dart';
@@ -48,12 +49,13 @@ class _UserHomePageState extends State<UserHomePage> {
                 layout.maxHeight,
               ),
             getContainer(
-              isAdmin() ? "Resolved Issues" : "Emergency Contacts",
+              isAdmin() ? "Admin Controls" : "Emergency Contacts",
               "assets/emergency_contacts.svg",
               () {
                 if (!isAdmin()) {
-                  navigateTo(const EmergencyNumbersPage(), context);
+                  return navigateTo(const EmergencyNumbersPage(), context);
                 }
+                navigateTo(const AdminControlPage(), context);
               },
               layout.maxHeight,
             ),

@@ -6,12 +6,16 @@ class ActionButton extends StatelessWidget {
   final String text;
   final Color color;
   final Function onPressed;
+  final Widget? child;
+  final bool shrink;
 
   const ActionButton({
     super.key,
     required this.text,
     required this.onPressed,
+    this.shrink = true,
     this.color = accentColor,
+    this.child,
   });
 
   @override
@@ -23,16 +27,24 @@ class ActionButton extends StatelessWidget {
         width: double.infinity,
         decoration: BoxDecoration(
           color: color,
-          borderRadius: BorderRadius.circular(12.0),
+          borderRadius: BorderRadius.circular(60.0),
         ),
         child: Center(
-          child: Text(
-            text,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 18.0,
-              fontWeight: FontWeight.bold,
-            ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              child ?? Container(),
+              child != null ? const SizedBox(width: 10) : Container(),
+              Text(
+                text,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
           ),
         ),
       ),

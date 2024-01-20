@@ -3,9 +3,11 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:swaraksha/core/auth/application/auth.dart';
 
 import 'package:swaraksha/core/issues/application/issues_manager.dart';
+import 'package:swaraksha/core/issues/presentation/camera_sheet.dart';
 import 'package:swaraksha/dialogs/info_dialog.dart';
 import 'package:swaraksha/helpers/location_helper.dart';
 import 'package:swaraksha/models/department.dart';
@@ -124,6 +126,10 @@ class _AddIssuePageState extends State<AddIssuePage> {
                         Navigator.pop(context);
                       }
                     },
+                    child: Icon(
+                      MdiIcons.plusCircle,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),
@@ -144,7 +150,6 @@ class _AddIssuePageState extends State<AddIssuePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            
             CustomTextField(
               hint: "Title",
               onChanged: (v) {
@@ -207,9 +212,6 @@ class _AddIssuePageState extends State<AddIssuePage> {
             ),
             const SizedBox(height: 10),
             getAttachImageContainer(),
-            SizedBox(
-              height: 0.2 * getHeight(context),
-            ),
           ],
         ),
       ),
@@ -245,7 +247,9 @@ class _AddIssuePageState extends State<AddIssuePage> {
                   height: 30,
                   width: 30,
                   decoration: const BoxDecoration(
-                      color: Colors.white, shape: BoxShape.circle),
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                  ),
                   child: const Center(
                     child: Icon(
                       Icons.close,
@@ -263,10 +267,18 @@ class _AddIssuePageState extends State<AddIssuePage> {
       padding: const EdgeInsets.symmetric(vertical: 10.0),
       child: InkWell(
         borderRadius: BorderRadius.circular(12.0),
-        onTap: () {
+        onTap: () async {
+          var res = await showModalBottomSheet(
+              context: context,
+              builder: (context) {
+                return const CameraSheet();
+              });
+
+          if (res == null) return;
+
           ImagePicker()
               .pickImage(
-            source: ImageSource.gallery,
+            source: res == 0 ? ImageSource.gallery : ImageSource.camera,
             imageQuality: 50,
           )
               .then((value) {
@@ -294,9 +306,9 @@ class _AddIssuePageState extends State<AddIssuePage> {
                 Expanded(
                   child: Center(
                     child: Icon(
-                      Icons.camera_alt_outlined,
+                      MdiIcons.cameraPlus,
                       color: Colors.black.withOpacity(0.4),
-                      size: 120,
+                      size: 80,
                     ),
                   ),
                 ),
