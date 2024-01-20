@@ -4,7 +4,7 @@ const Footer = () => {
 	return (
 		<React.Fragment>
 			<section
-				className="h-[40vh] bg-[#3EBCF0] flex justify-center items-center relative"
+				className="h-[40vh] bg-[#3EBCF0] flex justify-center items-center "
 				style={{
 					backgroundImage: 'url("../../public/footerBackground.jpg")',
 					backgroundSize: "cover",

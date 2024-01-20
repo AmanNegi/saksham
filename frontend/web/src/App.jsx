@@ -8,7 +8,7 @@ export default function App() {
 	return (
 		<>
 			<main>
-				<Nav />
+				
 				<Hero />
 				<Solution />
 				<InfoCard />
