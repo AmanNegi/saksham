@@ -59,16 +59,10 @@ const Nav = () => {
 							<a
 								href="#"
 								class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md">
-								About
+								Solution
 							</a>
 						</li>
-						<li>
-							<a
-								href="#"
-								class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700">
-								Services
-							</a>
-						</li>
+						
 						<li>
 							<a
 								href="#"

@@ -13,27 +13,27 @@ const Footer = () => {
 				}}>
 				<div className="h-[8rem] m-2 relative">
 					<div className="absolute inset-0  opacity-50"></div>
-					<p className="font-extrabold font-[#000000] text-[2rem] leading-10 text-center text-black">
+					<p className="font-extrabold-100 font-[#000000] text-[1rem] leading-6  text-center text-black md:text-[2rem] sm:text-[3rem] leading-9">
 						Get Unine App on Google
 						<br />
 						Play or App store
 					</p>
 
-					<p className="text-[1rem] text-center">
+					<p className="text-[0.7rem] text-center sm: text-[1rem]">
 						Build your financial with a transparent community
 					</p>
 					<div className="flex justify-center">
 						<div>
 							<img
 								src="/google.png"
-								className="w-[10vw] object-contain"
+								className="w-[30vw] object-contain md:w-[20vh] sm:w-[10vh]"
 								alt=""
 							/>
 						</div>
 						<div>
 							<img
 								src="/google.png"
-								className="w-[10vw] object-contain"
+								className="w-[30vw] object-contain md:w-[20vh] sm:w-[10vh]"
 								alt=""
 							/>
 						</div>
