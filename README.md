@@ -1,10 +1,10 @@
-# Sahayak
+# Saksham 
 
 ## Inspiration
 
 In our day-to-day lives, we face several problems in our daily lives, such as water shortages, electricity issues, potholes on roads, and so on. To solve these issues we often find ourselves in the department offices lodging requests which consumes a lot of our time. If we try to lodge the issue from the comfort of our homes via calls, we often find the numbers outdated on websites and we find our requests lost and untracked.
 
-To resolve this issue we came up with a centralized platform **"Sahayak"** where a user can lodge all their issues, targeting specific departments. In turn, departments can also keep track of the issues and view the data graphically. Departments can also view issues on a map view getting an estimate of the situation and the number of people involved.
+To resolve this issue we came up with a centralized platform **"Saksham"** where a user can lodge all their issues, targeting specific departments. In turn, departments can also keep track of the issues and view the data graphically. Departments can also view issues on a map view getting an estimate of the situation and the number of people involved.
 
 ### TLDR;
 
