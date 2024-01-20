@@ -4,10 +4,20 @@ const cors = require("cors");
 const express = require("express");
 require("dotenv").config();
 
+// const socketIO = require("socket.io");
+
 const app = express();
 const server = require("http").createServer(app);
 
-const DB_URL = process.env.DB_URL || "mongodb://localhost:27017/swaraksha";
+// export const io = socketIO(server);
+
+// require("./startup/socket")(io);
+
+// io.on("connection", (client: any) => {
+//   console.log("a user is connected");
+// });
+
+const DB_URL = process.env.DB_URL || "mongodb://localhost:27017/swayamraksha";
 
 mongoose
   .connect(DB_URL)
