@@ -10,7 +10,7 @@ const Footer = () => {
 					backgroundSize: "cover",
 					backgroundPosition: "center",
 					backdropFilter: "blur(20px)",
-				}}>
+				}} id="footer">
 				<div className="h-[8rem] m-2 relative">
 					<div className="absolute inset-0  opacity-50"></div>
 					<p className="font-extrabold-100 font-[#000000] text-[1rem] leading-6  text-center text-black md:text-[2rem] sm:text-[3rem] leading-9">

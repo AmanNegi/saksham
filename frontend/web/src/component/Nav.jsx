@@ -55,7 +55,7 @@ const Nav = () => {
 			  </li>
 			  <li>
 				<a
-				  href="#"
+				  href="#solution"
 				  className="block py-2 px-3 md:p-0 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md">
 				  Solution
 				</a>
@@ -63,7 +63,7 @@ const Nav = () => {
   
 			  <li>
 				<a
-				  href="#"
+				  href="#footer"
 				  className="block py-2 px-3 md:p-0 text-white  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700">
 				  Contact
 				</a>
