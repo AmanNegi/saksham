@@ -7,7 +7,7 @@ require("dotenv").config();
 const app = express();
 const server = require("http").createServer(app);
 
-const DB_URL = process.env.DB_URL || "mongodb://localhost:27017/swayamraksha";
+const DB_URL = process.env.DB_URL || "mongodb://localhost:27017/swaraksha";
 
 mongoose
   .connect(DB_URL)

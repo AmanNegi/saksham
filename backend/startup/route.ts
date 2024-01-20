@@ -5,4 +5,7 @@ const regions = require("../routes/regions");
 
 module.exports = function (app: any) {
   app.use("/api/auth", auth);
+  app.use("/api/department", department);
+  app.use("/api/issues", issue);
+  app.use("/api/regions", regions);
 };
