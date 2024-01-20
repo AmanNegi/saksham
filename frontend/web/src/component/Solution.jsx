@@ -2,8 +2,8 @@ import Card from "./Card";
 
 function Solution() {
 	return (
-		<article>
-			<section className="h-auto space-y-3 p-4 sm:p-10 xl:h-[50vh] xl:flex xl:flex-col xl:justify-center xl:items-center">
+		<article id = "solution">
+			<section className="h-auto space-y-3 p-4 sm:p-10 xl:h-[25vh] xl:flex xl:flex-col xl:justify-center xl:items-center">
 				<h1 className="text-center">Safe & Conveinint transaction</h1>
 				<p className="text-center">
 					Want to pay anything with the touch of a finger. Through UNINE, you
